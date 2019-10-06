@@ -1,18 +1,11 @@
-import Head from 'next/head'
-import Nav from '../components/nav'
+import Layout from "../components/Layout";
 
 const Home = () => (
-  <div>
-    <Head>
-      <title>Home</title>
-      <link rel='icon' href='/static/favicon.ico' importance='low' />
-    </Head>
+  <Layout title="Home">
     <div>
-        <h1>Home Page</h1>
+      <p>Welcome to the home page</p>
     </div>
+  </Layout>
+);
 
-
-  </div>
-)
-
-export default Home
+export default Home;

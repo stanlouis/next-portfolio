@@ -1,37 +1,42 @@
-import React from 'react'
-import Link from 'next/link'
-
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' }
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
+import React from "react";
+import Link from "next/link";
 
 const Nav = () => (
   <nav>
+    <Link href="/">
+      <a  className="logo">StanSwift</a>
+    </Link>
     <ul>
       <li>
-        <Link href='/'>
+        <Link href="/" >
           <a>Home</a>
         </Link>
       </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
+      <li>
+        <Link href="/about">
+          <a>About</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/hireme">
+          <a>Hire Me</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/blog">
+          <a>Blog</a>
+        </Link>
+      </li>
     </ul>
 
     <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
       nav {
-        text-align: center;
+        width: 100%;
+        background-color: darkgreen;
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
       ul {
         display: flex;
@@ -45,12 +50,22 @@ const Nav = () => (
         padding: 6px 8px;
       }
       a {
-        color: #067df7;
+        color: darkgrey;
         text-decoration: none;
-        font-size: 13px;
+      }
+
+      a:hover {
+        font-weight: bold;
+        color: lightgrey;
+      }
+      .logo {
+        display: inline-block;
+        padding: 0 30px;
+        font-weight: bold;
+        font-size: 1.2rem;
       }
     `}</style>
   </nav>
-)
+);
 
-export default Nav
+export default Nav;
